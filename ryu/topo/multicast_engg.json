@@ -1,0 +1,78 @@
+{
+	"switches": {
+		"s1": { "h1": {"port":1, "cost":1, "capacity":1000}, "h2": {"port":2, "cost":1, "capacity":1000},
+				 "s2": {"port":3, "cost":3, "capacity":1000}, "h9": {"port":4, "cost":1, "capacity":1000},
+				 "s4": {"port":5, "cost":1, "capacity":1000} },
+		"s2": { "s3": {"port":1, "cost":9, "capacity":1000} },
+		"s3": { "h3": {"port":1, "cost":1, "capacity":1000}, "h4": {"port":2, "cost":1, "capacity":1000},
+				"s5": {"port":3, "cost":1, "capacity":1000} },
+		"s4": { "s5": {"port":1, "cost":6, "capacity":1000} },
+		"s5": { "h5": {"port":1, "cost":1, "capacity":1000}, "h6": {"port":2, "cost":1, "capacity":1000},
+				"h13": {"port":3, "cost":1, "capacity":1000}, "h14": {"port":4, "cost":1, "capacity":1000} },
+		"s6": { "s7": {"port":1, "cost":7, "capacity":1000}, "s1": {"port":2, "cost":2, "capacity":1000} },
+		"s7": { "h8": {"port":1, "cost":1, "capacity":1000}, "h7": {"port":2, "cost":1, "capacity":1000},
+				"h12": {"port":3, "cost":1, "capacity":1000}, "h11": {"port":4, "cost":1, "capacity":1000},
+				"h10": {"port":5, "cost":1, "capacity":1000}, "s5": {"port":6, "cost":2, "capacity":1000} },
+		"h0": { "s1": {"port":1, "cost":9, "capacity":1000}, "s6": {"port":2, "cost":8, "capacity":1000} },
+		"h1": { "h0": {"port":1, "cost":3, "capacity":1000} },
+		"h2": { "h1": {"port":1, "cost":7, "capacity":1000} },
+		"h3": { "h2": {"port":1, "cost":5, "capacity":1000} },
+		"h4": { "h5": {"port":1, "cost":6, "capacity":1000} },
+		"h5": { },
+		"h6": { "h13": {"port":1, "cost":3, "capacity":1000} },
+		"h7": { "h12": {"port":1, "cost":5, "capacity":1000} },
+		"h8": { "h0": {"port":1, "cost":6, "capacity":1000} },
+		"h9": { },
+		"h10": { "h11": {"port":1, "cost":5, "capacity":1000} },
+		"h11": { },
+		"h12": { },
+		"h13": { },
+		"h14": { "h12": {"port":1, "cost":7, "capacity":1000} }
+	},
+
+	"dpids": {
+		"s1": {"id":1, "cost":0, "capacity":1 },
+		"s2": {"id":2, "cost":0, "capacity":1 },
+		"s3": {"id":3, "cost":0, "capacity":1 },
+		"s4": {"id":4, "cost":0, "capacity":1 },
+		"s5": {"id":5, "cost":0, "capacity":1 },
+		"s6": {"id":6, "cost":0, "capacity":1 },
+		"s7": {"id":7, "cost":0, "capacity":1 }
+	},
+
+	"dpids_hosts": {
+		"h0": {"id":0, "cost":0, "capacity":1000 },
+		"h1": {"id":1, "cost":0, "capacity":1000 },
+		"h2": {"id":2, "cost":0, "capacity":1000 },
+		"h3": {"id":3, "cost":0, "capacity":1000 },
+		"h4": {"id":4, "cost":0, "capacity":1000 },
+		"h5": {"id":5, "cost":0, "capacity":1000 },
+		"h6": {"id":6, "cost":0, "capacity":1000 },
+		"h7": {"id":7, "cost":0, "capacity":1000 },
+		"h8": {"id":8, "cost":0, "capacity":1000 },
+		"h9": {"id":9, "cost":0, "capacity":1000 },
+		"h10": {"id":10, "cost":0, "capacity":1000 },
+		"h11": {"id":11, "cost":0, "capacity":1000 },
+		"h12": {"id":12, "cost":0, "capacity":1000 },
+		"h13": {"id":13, "cost":0, "capacity":1000 },
+		"h14": {"id":14, "cost":0, "capacity":1000 }
+	},
+
+	"hosts": {
+		"h1": { "switch": "s9", "port": 3, "ip": "10.0.0.1" },
+		"h2": { "switch": "s9", "port": 4, "ip": "10.0.0.2" },
+		"h3": { "switch": "s9", "port": 5, "ip": "10.0.0.3" },
+		"h4": { "switch": "s9", "port": 6, "ip": "10.0.0.4" },
+		"h5": { "switch": "s10", "port": 3, "ip": "10.0.0.5" },
+		"h6": { "switch": "s10", "port": 4, "ip": "10.0.0.6" },
+		"h7": { "switch": "s10", "port": 5, "ip": "10.0.0.7" },
+		"h8": { "switch": "s10", "port": 6, "ip": "10.0.0.8" },
+		"h9": { "switch": "s11", "port": 3, "ip": "10.0.0.9" },
+		"h10": { "switch": "s11", "port": 4, "ip": "10.0.0.10" },
+		"h11": { "switch": "s11", "port": 5, "ip": "10.0.0.11" },
+		"h12": { "switch": "s11", "port": 6, "ip": "10.0.0.12" },
+		"h13": { "switch": "s12", "port": 3, "ip": "10.0.0.13" },
+		"h14": { "switch": "s12", "port": 4, "ip": "10.0.0.14" }
+	}
+
+}

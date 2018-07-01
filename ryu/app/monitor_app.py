@@ -21,10 +21,20 @@ from ryu.controller.handler import MAIN_DISPATCHER, DEAD_DISPATCHER
 from ryu.controller.handler import set_ev_cls
 from ryu.lib import hub
 
+from ryu.base import app_manager
+from ryu.controller import ofp_event
+from ryu.controller.handler import CONFIG_DISPATCHER
+from ryu.ofproto import ofproto_v1_3
 
-class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
+
+
+class SimpleMonitor13(app_manager.RyuApp):
 
     def __init__(self, *args, **kwargs):
+        print "In the init method"
+        algo = input("Enter the algorithm: without_lb, with_lb, FTLB or avalanche\n")
+        file_tobe_written = "stats_file_"+algo+".txt"
+        self.file = open("/home/nithin/ryu/ryu/app/"+file_tobe_written,"w")
         super(SimpleMonitor13, self).__init__(*args, **kwargs)
         self.datapaths = {}
         self.monitor_thread = hub.spawn(self._monitor)
@@ -36,17 +46,20 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
         if ev.state == MAIN_DISPATCHER:
             if datapath.id not in self.datapaths:
                 self.logger.debug('register datapath: %016x', datapath.id)
+                self.file.write('register datapath: %016x \n'%datapath.id)
                 self.datapaths[datapath.id] = datapath
         elif ev.state == DEAD_DISPATCHER:
             if datapath.id in self.datapaths:
                 self.logger.debug('unregister datapath: %016x', datapath.id)
+                self.file.write('unregister datapath: %016x \n'%datapath.id)
                 del self.datapaths[datapath.id]
 
     def _monitor(self):
+        print "In _monitro method"
         while True:
             for dp in self.datapaths.values():
                 self._request_stats(dp)
-            hub.sleep(10)
+            hub.sleep(50)
 
     def _request_stats(self, datapath):
         self.logger.debug('send stats request: %016x', datapath.id)
@@ -56,27 +69,40 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
         req = parser.OFPFlowStatsRequest(datapath)
         datapath.send_msg(req)
 
-        req = parser.OFPPortStatsRequest(datapath, 0, ofproto.OFPP_ANY)
-        datapath.send_msg(req)
+        #req = parser.OFPPortStatsRequest(datapath, 0, ofproto.OFPP_ANY)
+        #datapath.send_msg(req)
 
     @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
     def _flow_stats_reply_handler(self, ev):
         body = ev.msg.body
 
+
+        self.logger.info("New statiscs arrived")
         self.logger.info('datapath         '
-                         'in-port  eth-dst           '
-                         'out-port packets  bytes')
+                         'in-port  ip-dst           '
+                         'packets  bytes')
         self.logger.info('---------------- '
                          '-------- ----------------- '
-                         '-------- -------- --------')
-        for stat in sorted([flow for flow in body if flow.priority == 1],
-                           key=lambda flow: (flow.match['in_port'],
-                                             flow.match['eth_dst'])):
-            self.logger.info('%016x %8x %17s %8x %8d %8d',
+                         '-------- -------- ')
+        #self.file.write("\n")
+        self.file.write("New statiscs arrived")
+        self.file.write("\n")
+        self.file.write('datapath         '
+                         'in-port  ip-dst           '
+                         'packets  bytes \n')
+        self.file.write('---------------- '
+                         '-------- ----------------- '
+                         '-------- -------- \n')
+        for stat in sorted([flow for flow in body],
+                           key=lambda flow: (flow.match['in_port'])):
+            self.logger.info('%016x %8x %17s %8d %8d',
                              ev.msg.datapath.id,
-                             stat.match['in_port'], stat.match['eth_dst'],
-                             stat.instructions[0].actions[0].port,
+                             stat.match["in_port"], stat.match["ipv4_dst"],
                              stat.packet_count, stat.byte_count)
+            self.file.write('{0:16x} {1:8d} {2:17s} {3:8d} {4:8d} \n'.format(
+                             ev.msg.datapath.id,
+                             stat.match["in_port"], stat.match["ipv4_dst"],
+                             stat.packet_count, stat.byte_count))
 
     @set_ev_cls(ofp_event.EventOFPPortStatsReply, MAIN_DISPATCHER)
     def _port_stats_reply_handler(self, ev):
@@ -88,9 +114,20 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
         self.logger.info('---------------- -------- '
                          '-------- -------- -------- '
                          '-------- -------- --------')
+        self.file.write('datapath         port     '
+                         'rx-pkts  rx-bytes rx-error '
+                         'tx-pkts  tx-bytes tx-error \n')
+        self.file.write('---------------- -------- '
+                         '-------- -------- -------- '
+                         '-------- -------- -------- \n')
         for stat in sorted(body, key=attrgetter('port_no')):
             self.logger.info('%016x %8x %8d %8d %8d %8d %8d %8d',
                              ev.msg.datapath.id, stat.port_no,
                              stat.rx_packets, stat.rx_bytes, stat.rx_errors,
                              stat.tx_packets, stat.tx_bytes, stat.tx_errors)
+            self.file.write('{0:016x} {1:8x} {2:8d} {3:8d} {4:8d} {5:8d} {6:8d} {7:8d} \n'.format(
+                             ev.msg.datapath.id, stat.port_no,
+                             stat.rx_packets, stat.rx_bytes, stat.rx_errors,
+                             stat.tx_packets, stat.tx_bytes, stat.tx_errors))
             
+

@@ -1,0 +1,180 @@
+register datapath: 0000000000000009 
+register datapath: 0000000000000008 
+register datapath: 0000000000000003 
+register datapath: 0000000000000002 
+register datapath: 0000000000000001 
+register datapath: 0000000000000007 
+register datapath: 0000000000000006 
+register datapath: 0000000000000005 
+register datapath: 0000000000000004 
+register datapath: 0000000000000013 
+register datapath: 0000000000000012 
+register datapath: 000000000000000d 
+register datapath: 000000000000000c 
+register datapath: 000000000000000b 
+register datapath: 000000000000000a 
+register datapath: 0000000000000011 
+register datapath: 0000000000000010 
+register datapath: 000000000000000f 
+register datapath: 000000000000000e 
+register datapath: 0000000000000014 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               9        1 239.192.0.1           1261  1718694 
+               9        2 239.192.0.3           1261  1718694 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               7        1 239.192.0.1           1261  1718694 
+               7        2 239.192.0.3           1261  1718694 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               4        1 239.192.0.2           1259  1715954 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               1        1 239.192.0.1           1261  1718694 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               b        1 239.192.0.1           1261  1718694 
+               b        2 239.192.0.3           1261  1718694 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               5        3 239.192.0.1           1267  1726914 
+               5        3 239.192.0.3           1267  1726914 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               3        1 239.192.0.4           1255  1710474 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               2        1 239.192.0.3           1261  1718694 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               8        1 239.192.0.4           1255  1710474 
+               8        2 239.192.0.2           1259  1715954 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               e        1 239.192.0.1           1261  1718694 
+               e        1 239.192.0.3           1261  1718694 
+               e        2 239.192.0.2           1259  1715954 
+               e        2 239.192.0.4           1255  1710474 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+              13        1 239.192.0.1           1255  1710474 
+              13        1 239.192.0.3           1255  1710474 
+              13        2 239.192.0.2           1253  1707734 
+              13        2 239.192.0.4           1249  1702254 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               f        1 239.192.0.1           1255  1710474 
+               f        1 239.192.0.3           1255  1710474 
+               f        2 239.192.0.2           1253  1707734 
+               f        2 239.192.0.4           1249  1702254 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               c        1 239.192.0.4           1255  1710474 
+               c        2 239.192.0.2           1259  1715954 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+              11        1 239.192.0.1           1255  1710474 
+              11        1 239.192.0.3           1255  1710474 
+              11        2 239.192.0.2           1253  1707734 
+              11        2 239.192.0.4           1249  1702254 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               6        3 239.192.0.2           1265  1724174 
+               6        3 239.192.0.4           1261  1718694 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               d        3 239.192.0.1           1271  1732394 
+               d        3 239.192.0.2           1265  1724174 
+               d        3 239.192.0.3           1267  1726914 
+               d        3 239.192.0.4           1261  1718694 
+New statiscs arrived
+datapath         in-port  ip-dst           packets  bytes 
+---------------- -------- ----------------- -------- -------- 
+               a        1 239.192.0.4           1255  1710474 
+               a        2 239.192.0.2           1259  1715954 
